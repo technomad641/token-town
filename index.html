@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101725" />
+    <meta name="description" content="A living map of the AI economy, powered by tokens." />
+    <title>Token Town — The AI economy, in motion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main id="app" class="night">
+      <div class="sky"><span class="moon"></span><span class="stars"></span></div>
+      <div class="aurora"></div>
+      <div class="town" aria-label="An illustrated town representing AI labs">
+        <div class="horizon"></div><div class="mountain one"></div><div class="mountain two"></div>
+        <div class="road"><i></i><i></i><i></i></div>
+        <div class="sidewalk"></div>
+        <div class="shop shop-left"><div class="roof"></div><div class="windows"><b></b><b></b><b></b></div><span>ANTHROPIC</span></div>
+        <div class="shop shop-main"><div class="roof"></div><div class="sign" id="shopSign">DEEPSEEK</div><div class="windows"><b></b><b></b><b></b><b></b></div><div class="awning"></div></div>
+        <div class="shop shop-right"><div class="roof"></div><div class="windows"><b></b><b></b><b></b></div><span>OPENAI</span></div>
+        <div class="tree t1"><i></i></div><div class="tree t2"><i></i></div><div class="tree t3"><i></i></div>
+        <div class="lamp l1"><i></i></div><div class="lamp l2"><i></i></div>
+        <div class="crowd" aria-hidden="true"></div>
+        <div class="cars" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="neon neon-left">Claude · Haiku 5.5<br/><small>13.4T tokens/wk · $0.10 / 1M in</small></div>
+        <div class="neon neon-right">Z.ai · GLM 5.3 Prime<br/><small>18.8T tokens/wk · $2.80 / 1M in</small></div>
+      </div>
+
+      <header>
+        <a class="brand" href="#top" aria-label="Token Town home"><span class="brand-orb">✦</span><span><strong>Token Town</strong><em>Real usage. Real people. Real AI.</em></span></a>
+        <nav><button id="prev" aria-label="Previous lab">← <span>Previous</span></button><output id="counter">1 / 6</output><button id="next" aria-label="Next lab"><span>Next</span> →</button></nav>
+      </header>
+
+      <section class="spotlight" aria-live="polite">
+        <div class="identity"><span id="avatar">✦</span><p id="rank">DeepSeek · #1 by tokens</p></div>
+        <div class="model-row"><h1 id="modelName">DeepSeek V4.1 Flash</h1><span id="tag">Latest</span></div>
+        <div class="stats"><div><strong id="tokens">46.4T</strong><span>tokens this week</span></div><div class="change down" id="change">↓ 16.1%</div><div class="chart" id="chart"><i></i><i></i><i></i><i></i></div></div>
+        <div class="features"><div><b>⊙</b><span><strong id="context">1M</strong> context</span></div><div><b>◫</b><span><strong id="mode">Multimodal</strong> text, image</span></div><div><b>$</b><span><strong id="price">$0.30 / $1.20</strong> in / out · 1M</span></div><div><b>♧</b><span><strong id="visitors">124 visitors</strong> listed this week</span></div></div>
+      </section>
+      <section class="manifesto"><p>Different AI.<br/>A More Open World.</p><button id="about">About this town <span>↗</span></button></section>
+      <div class="controls" aria-label="Playback controls"><button id="pause" title="Pause">Ⅱ</button><button id="speed">8×</button><button id="daynight" title="Toggle day and night">☾</button><button id="share" title="Share Token Town">↗ <span>Share</span></button></div>
+      <footer><a href="https://x.com/intent/post?text=I%20just%20took%20a%20walk%20through%20the%20AI%20economy%20%F0%9F%8F%99%EF%B8%8F" target="_blank" rel="noreferrer">𝕏 Follow on X</a><span>MODELS: ILLUSTRATIVE · TOKENS: DEMO DATA · MADE FOR THE CURIOUS</span></footer>
+      <dialog id="aboutDialog"><button class="close" aria-label="Close">×</button><span class="eyebrow">WELCOME TO TOKEN TOWN</span><h2>AI is an economy.<br/>Now you can walk through it.</h2><p>Every storefront represents a frontier lab. The busier the street, the more tokens its models are processing. Tap through the town, capture your favorite frame, and share what you see.</p><button id="closeAbout">Start exploring →</button></dialog>
+      <div id="toast" role="status">Link copied — bring the town to your feed ✦</div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

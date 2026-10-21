@@ -41,7 +41,7 @@ The result is part data story, part tiny world, and part invitation to ask: *whi
 
 ## 🎥 UI/UX tour
 
-The looping preview sets the scene: a miniature AI district at blue hour, with warm storefronts and a city stretching into the distance. Open the live app to move through its labs and interact with the town:
+The looping preview sets the scene: a compact, voxel-inspired AI district at blue hour, with warm storefronts and a living street. Open the live app to move through its labs and interact with the town:
 
 | Moment | What it feels like |
 | --- | --- |

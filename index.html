@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#101725" />
     <meta name="description" content="A living map of the AI economy, powered by tokens." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Token Town — The AI economy, made walkable" />
+    <meta property="og:description" content="Explore a living AI district. The busiest labs get the brightest storefronts." />
+    <meta property="og:image" content="https://raw.githubusercontent.com/technomad641/token-town/master/assets/token-town-social-card.jpg" />
+    <meta property="og:image:alt" content="A glowing miniature AI city at blue hour" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Token Town — The AI economy, made walkable" />
+    <meta name="twitter:description" content="Explore a living AI district. The busiest labs get the brightest storefronts." />
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/technomad641/token-town/master/assets/token-town-social-card.jpg" />
+    <link rel="preload" as="image" href="assets/token-town-world.jpg" />
     <title>Token Town — The AI economy, in motion</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,19 +25,79 @@
     <main id="app" class="night">
       <div class="sky"><span class="moon"></span><span class="stars"></span></div>
       <div class="aurora"></div>
-      <div class="town" aria-label="An illustrated town representing AI labs">
-        <div class="horizon"></div><div class="mountain one"></div><div class="mountain two"></div>
-        <div class="road"><i></i><i></i><i></i></div>
-        <div class="sidewalk"></div>
-        <div class="shop shop-left"><div class="roof"></div><div class="windows"><b></b><b></b><b></b></div><span>ANTHROPIC</span></div>
-        <div class="shop shop-main"><div class="roof"></div><div class="sign" id="shopSign">DEEPSEEK</div><div class="windows"><b></b><b></b><b></b><b></b></div><div class="awning"></div></div>
-        <div class="shop shop-right"><div class="roof"></div><div class="windows"><b></b><b></b><b></b></div><span>OPENAI</span></div>
-        <div class="tree t1"><i></i></div><div class="tree t2"><i></i></div><div class="tree t3"><i></i></div>
-        <div class="lamp l1"><i></i></div><div class="lamp l2"><i></i></div>
-        <div class="crowd" aria-hidden="true"></div>
-        <div class="cars" aria-hidden="true"><span></span><span></span><span></span></div>
-        <div class="neon neon-left">Claude · Haiku 5.5<br/><small>13.4T tokens/wk · $0.10 / 1M in</small></div>
-        <div class="neon neon-right">Z.ai · GLM 5.3 Prime<br/><small>18.8T tokens/wk · $2.80 / 1M in</small></div>
+      <div class="town" aria-label="An illustrated isometric AI shopping district">
+        <span id="shopSign" class="scene-sign">DEEPSEEK</span>
+        <span class="district-tag district-tag-left"><strong>Claude · Haiku</strong><small>13.4T tokens / wk</small></span>
+        <span class="district-tag district-tag-right"><strong>Z.ai · GLM</strong><small>18.8T tokens / wk</small></span>
+        <svg class="town-art" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="sceneTitle sceneDesc">
+          <title id="sceneTitle">Token Town at night</title><desc id="sceneDesc">A glowing isometric shopping street with AI lab storefronts, tiny visitors, trees, and passing cars.</desc>
+          <defs>
+            <linearGradient id="mountainFade" x2="0" y2="1"><stop stop-color="#647184" stop-opacity=".55"/><stop offset="1" stop-color="#303a49" stop-opacity=".08"/></linearGradient>
+            <linearGradient id="roadGlow" x2="0" y2="1"><stop stop-color="#434651"/><stop offset="1" stop-color="#171d29"/></linearGradient>
+            <linearGradient id="mainFront" x2="0" y2="1"><stop stop-color="#e1c8a0"/><stop offset="1" stop-color="#a77d65"/></linearGradient>
+            <linearGradient id="mainSide" x2="1" y2=".4"><stop stop-color="#a76650"/><stop offset="1" stop-color="#71433f"/></linearGradient>
+            <linearGradient id="roof" x2="1" y2="1"><stop stop-color="#f2e8d2"/><stop offset="1" stop-color="#9d9a91"/></linearGradient>
+            <linearGradient id="warmWindow" x2="0" y2="1"><stop stop-color="#fffce5"/><stop offset=".55" stop-color="#ffe9ae"/><stop offset="1" stop-color="#e7a45d"/></linearGradient>
+            <linearGradient id="streetGlass" x2="0" y2="1"><stop stop-color="#27374a" stop-opacity=".1"/><stop offset="1" stop-color="#f5a86a" stop-opacity=".24"/></linearGradient>
+            <filter id="windowGlow" x="-150%" y="-150%" width="400%" height="400%"><feGaussianBlur stdDeviation="12" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="softGlow" x="-150%" y="-150%" width="400%" height="400%"><feGaussianBlur stdDeviation="24"/></filter>
+            <filter id="buildingShadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="23" stdDeviation="17" flood-color="#0a111c" flood-opacity=".55"/></filter>
+            <pattern id="pavers" width="90" height="44" patternUnits="userSpaceOnUse" patternTransform="skewY(-12)"><path d="M0 0H90M0 22H90M45 0V22M20 22V44" fill="none" stroke="#e5d5b9" stroke-opacity=".12" stroke-width="2"/></pattern>
+          </defs>
+          <g class="distant-town" opacity=".66">
+            <path d="M0 338 120 285l85 21 148-111 146 107 81-34 120 72v174H0Z" fill="url(#mountainFade)"/>
+            <path d="m824 340 172-113 92 54 146-126 206 133v204H824Z" fill="url(#mountainFade)"/>
+            <g fill="#596474" opacity=".55"><path d="M80 335v-94l87-42 77 39v117Z"/><path d="M251 302v-72l72-44 94 42v108Z"/><path d="M1050 304v-90l99-58 89 50v116Z"/><path d="M1261 326v-75l70-37 109 50v90Z"/></g>
+            <g fill="#ffdc9b" opacity=".66"><path d="M115 260h12v24h-12zm31-15h12v25h-12zm40 17h12v24h-12zM298 238h12v20h-12zm39-20h12v20h-12zM1090 232h12v21h-12zm38-23h12v22h-12zm62 20h12v22h-12zM1302 266h11v20h-11zm48 10h11v19h-11z"/></g>
+          </g>
+          <path d="M0 462 1440 410v490H0Z" fill="#56585a"/>
+          <path d="m0 520 1440-88v468L0 900Z" fill="url(#pavers)" opacity=".72"/>
+          <path d="m0 605 1440-113v408H0Z" fill="url(#roadGlow)"/>
+          <path d="m0 606 1440-112" stroke="#e8c98f" stroke-width="6" opacity=".72"/>
+          <path d="m0 750 1440-106" stroke="#f0cf8b" stroke-width="5" stroke-dasharray="68 72" opacity=".72"/>
+          <path d="m0 611 1440-111v34L0 646Z" fill="url(#streetGlass)" opacity=".76"/>
+          <g class="side-buildings" filter="url(#buildingShadow)">
+            <g class="claude-building"><path d="m72 426 224-75 177 58-224 83Z" fill="#eee5d1"/><path d="m72 426 177 66v159L72 586Z" fill="#b7a891"/><path d="m249 492 224-83v158l-224 83Z" fill="#734d4c"/><path d="m249 492 224-83-26-33-224 79Z" fill="#d8d0bf"/><g fill="url(#warmWindow)" stroke="#fff0d0" stroke-width="6"><path d="m100 450 32 12v68l-32-12Z"/><path d="m151 470 32 12v68l-32-12Z"/><path d="m204 488 28 11v61l-28-11Z"/></g><path d="m282 513 143-53v38l-143 54Z" fill="#1e2b35" stroke="#d8b885" stroke-width="3"/><text x="353" y="525" transform="rotate(-20 353 525)" text-anchor="middle" fill="#f1dfb5" font-size="14" font-family="Arial,sans-serif" font-weight="700">ANTHROPIC</text></g>
+            <g class="openai-building"><path d="m1048 415 165-76 180 64-170 83Z" fill="#ece2d0"/><path d="m1048 415 175 71v153l-175-71Z" fill="#a06d53"/><path d="m1223 486 170-83v153l-170 83Z" fill="#6c4240"/><path d="m1048 415 165-76 21 34-170 80Z" fill="#d4c9b5"/><g fill="url(#warmWindow)" stroke="#fff0ce" stroke-width="5"><path d="m1078 445 30 12v65l-30-12Z"/><path d="m1127 464 30 12v65l-30-12Z"/><path d="m1176 484 27 11v59l-27-11Z"/></g><path d="m1250 501 110-53v34l-110 54Z" fill="#1f2935" stroke="#d6b577" stroke-width="3"/><text x="1305" y="513" transform="rotate(-25 1305 513)" text-anchor="middle" fill="#f1ddb0" font-size="13" font-family="Arial,sans-serif" font-weight="700">OPENAI</text></g>
+          </g>
+          <ellipse cx="774" cy="615" rx="365" ry="85" fill="#0b1018" opacity=".42" filter="url(#softGlow)"/>
+          <g class="main-building" transform="translate(204 50) scale(.75 .8)" filter="url(#buildingShadow)">
+            <path d="m474 342 361-124 328 137-360 139Z" fill="url(#roof)" stroke="#d8c9ad" stroke-width="5"/>
+            <path d="m474 342 329 152v226L474 565Z" fill="url(#mainFront)"/>
+            <path d="m803 494 360-139v226L803 720Z" fill="url(#mainSide)"/>
+            <path d="m474 342 361-124-13-37-365 126Z" fill="#f3ecda"/>
+            <path d="m835 218 328 137 25-31-330-139Z" fill="#b8b3aa"/>
+            <path d="m502 373 300 138v16L502 392Z" fill="#f6eee0" opacity=".6"/>
+            <g class="main-windows" filter="url(#windowGlow)">
+              <g fill="url(#warmWindow)" stroke="#fff8dc" stroke-width="8"><path d="m522 411 44 20v91l-44-20Z"/><path d="m594 442 44 20v91l-44-20Z"/><path d="m666 473 44 20v91l-44-20Z"/><path d="m738 503 39 18v84l-39-18Z"/></g>
+              <g stroke="#fff" stroke-opacity=".56" stroke-width="3"><path d="m544 421v92M616 452v92M688 483v92M757 512v84"/></g>
+            </g>
+            <path d="m822 550 303-118v52L822 603Z" fill="#17252d" stroke="#e3ca82" stroke-width="5"/>
+            <text x="970" y="535" transform="rotate(-21 970 535)" text-anchor="middle" fill="#ffe27c" font-size="30" font-family="Arial,sans-serif" font-weight="800" letter-spacing="2">DEEPSEEK</text>
+            <path d="m803 494 360-139v23L803 516Z" fill="#dbb07b"/>
+            <path d="m848 302 67-25 47 20-68 27Z" fill="#8c9291" stroke="#d6d3ca" stroke-width="4"/>
+            <path d="m848 302 46 22v37l-46-22Z" fill="#737c80"/>
+            <path d="m894 324 68-27v36l-68 28Z" fill="#535f66"/>
+            <path d="m860 300 51-19m-42 24 49-18m-40 23 47-17" stroke="#e5e1d6" stroke-width="3" opacity=".75"/>
+            <path d="m550 405 81 37m-80-20 70 32m-68-13 56 27" stroke="#ffebc3" stroke-width="3" opacity=".2"/>
+            <path d="m803 720 360-139" stroke="#493a38" stroke-width="13" opacity=".5"/>
+            <path d="m474 565 329 155v14L474 580Z" fill="#d0a578"/>
+          </g>
+          <g class="street-furniture">
+            <g class="tree tree-a"><path d="m340 590 12-4v104l-12 4Z" fill="#594237"/><ellipse cx="350" cy="563" rx="58" ry="46" fill="#547a4b"/><ellipse cx="331" cy="545" rx="43" ry="38" fill="#779a5c"/><ellipse cx="369" cy="536" rx="39" ry="41" fill="#89a963"/><ellipse cx="358" cy="558" rx="42" ry="34" fill="#658a50"/></g>
+            <g class="tree tree-b"><path d="m1221 595 10-3v92l-10 4Z" fill="#574135"/><ellipse cx="1230" cy="572" rx="52" ry="40" fill="#537747"/><ellipse cx="1207" cy="551" rx="36" ry="33" fill="#7c9d58"/><ellipse cx="1241" cy="545" rx="40" ry="38" fill="#88a75f"/></g>
+            <g class="lamp lamp-a"><path d="m418 517 7-2v132l-7 2Z" fill="#252b30"/><path d="m416 516 4-20 22-8 18 7-4 7-17-4-14 5-3 15Z" fill="#252b30"/><circle cx="451" cy="497" r="8" fill="#fff0ad" filter="url(#windowGlow)"/></g>
+            <g class="lamp lamp-b"><path d="m1163 552 7-2v108l-7 3Z" fill="#252b30"/><path d="m1160 551 3-19 22-9 17 7-3 7-17-4-14 5-2 14Z" fill="#252b30"/><circle cx="1194" cy="532" r="8" fill="#fff0ad" filter="url(#windowGlow)"/></g>
+          </g>
+          <g class="visitors" stroke-linecap="round">
+            <g class="walker walker-a"><ellipse cx="621" cy="646" rx="12" ry="5" fill="#111722" opacity=".45"/><circle cx="621" cy="612" r="8" fill="#dba987"/><path d="m621 621 1 21m0-14-9 10m9-9 9 9m-9 4-7 12m7-12 8 10" stroke="#32445b" stroke-width="7"/><path d="m617 612 2-5 7 1" stroke="#282531" stroke-width="5"/></g>
+            <g class="walker walker-b"><ellipse cx="878" cy="663" rx="11" ry="5" fill="#111722" opacity=".45"/><circle cx="878" cy="630" r="7" fill="#b9795e"/><path d="m878 638v20m0-12-8 8m8-8 8 6m-8 6-6 11m6-11 7 9" stroke="#a54d53" stroke-width="7"/><path d="m873 630 3-6h7" stroke="#222632" stroke-width="5"/></g>
+            <g class="walker walker-c"><ellipse cx="1094" cy="680" rx="10" ry="4" fill="#111722" opacity=".45"/><circle cx="1094" cy="650" r="7" fill="#e0b08a"/><path d="m1094 657v18m0-10-7 7m7-7 7 6m-7 4-5 10m5-10 6 8" stroke="#d3bd76" stroke-width="7"/><path d="m1090 650 3-5 6 1" stroke="#282531" stroke-width="5"/></g>
+            <g class="walker walker-d"><ellipse cx="739" cy="674" rx="9" ry="4" fill="#111722" opacity=".4"/><circle cx="739" cy="648" r="6" fill="#93604d"/><path d="m739 654v15m0-9-6 6m6-6 6 5m-6 4-4 9m4-9 5 7" stroke="#516e84" stroke-width="6"/></g>
+          </g>
+          <g class="traffic"><path d="m128 751 65-5 27 14-65 6Z" fill="#e98f7c"/><path d="m145 746 27-2 12 8-28 2Z" fill="#c9e8ed"/><path d="m122 764 91-7" stroke="#ff8a7e" stroke-width="4" opacity=".8" filter="url(#windowGlow)"/><circle cx="145" cy="764" r="5" fill="#111722"/><circle cx="195" cy="760" r="5" fill="#111722"/></g>
+          <g class="traffic traffic-b"><path d="m1080 759 56-5 23 12-57 6Z" fill="#536d9e"/><path d="m1095 754 23-2 11 7-24 2Z" fill="#d7f4ff"/><path d="m1074 772 81-7" stroke="#78adff" stroke-width="4" opacity=".8" filter="url(#windowGlow)"/><circle cx="1091" cy="772" r="5" fill="#111722"/><circle cx="1134" cy="768" r="5" fill="#111722"/></g>
+        </svg>
       </div>
 
       <header>

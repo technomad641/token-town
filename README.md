@@ -8,9 +8,9 @@
 
 [Launch locally](#-launch-it) · [Take the tour](#-uiux-tour) · [Why this exists](#-why-token-town) · [Share it](#-make-it-travel)
 
-![Token Town UI walkthrough](assets/token-town-ui-tour.gif)
+![A slow cinematic glide through Token Town at blue hour](assets/token-town-ui-tour.gif)
 
-[▶ Watch the full-motion tour](assets/token-town-ui-tour.mp4)
+[▶ Watch the town come alive](assets/token-town-ui-tour.mp4)
 
 </div>
 
@@ -41,7 +41,7 @@ The result is part data story, part tiny world, and part invitation to ask: *whi
 
 ## 🎥 UI/UX tour
 
-The visual tour above shows the signature moment: a glowing nighttime street with the currently featured lab in focus. The live experience adds movement and interaction:
+The looping preview sets the scene: a miniature AI district at blue hour, with warm storefronts and a city stretching into the distance. Open the live app to move through its labs and interact with the town:
 
 | Moment | What it feels like |
 | --- | --- |
@@ -107,7 +107,7 @@ token-town/
 ├── index.html      # Town and interface structure
 ├── styles.css      # Cinematic scene, responsive layout, animations
 ├── app.js          # Lab switching, controls, sharing behavior
-└── assets/         # README UI tour media
+└── assets/         # City artwork and README preview media
 ```
 
 <div align="center">

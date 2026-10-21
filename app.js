@@ -6,12 +6,13 @@ const labs=[
  {lab:'Mistral',rank:'#5 by tokens',model:'Mistral Large 3',tokens:'9.8T',change:'↑ 19.3%',trend:'up',context:'256K',mode:'Text + image',price:'$0.50 / $1.50',visitors:'45 visitors',sign:'MISTRAL',icon:'◆'},
  {lab:'Meta',rank:'#6 by tokens',model:'Llama 4 Maverick',tokens:'7.2T',change:'↓ 2.7%',trend:'down',context:'1M',mode:'Multimodal',price:'$0.20 / $0.60',visitors:'39 visitors',sign:'META',icon:'∞'}
 ];
-let index=0, paused=false;
+let index=0, paused=false, speedIndex=0;
+const speeds=[{label:'8×',duration:'3s'},{label:'24×',duration:'1s'},{label:'1×',duration:'24s'}];
 const $=id=>document.getElementById(id);
 function render(){const d=labs[index];$('rank').textContent=`${d.lab} · ${d.rank}`;$('modelName').textContent=d.model;$('tokens').textContent=d.tokens;$('change').textContent=d.change;$('change').className=`change ${d.trend}`;$('context').textContent=d.context;$('mode').textContent=d.mode;$('price').textContent=d.price;$('visitors').textContent=d.visitors;$('shopSign').textContent=d.sign;$('avatar').textContent=d.icon;$('counter').textContent=`${index+1} / ${labs.length}`;document.querySelector('.spotlight').animate([{opacity:.45,transform:'translateY(9px)'},{opacity:1,transform:'translateY(0)'}],{duration:310,easing:'ease-out'});}
 $('next').onclick=()=>{index=(index+1)%labs.length;render()};$('prev').onclick=()=>{index=(index+labs.length-1)%labs.length;render()};
 $('pause').onclick=()=>{paused=!paused;$('app').classList.toggle('paused',paused);$('pause').textContent=paused?'▶':'Ⅱ'};
-$('speed').onclick=()=>{$('speed').textContent=$('speed').textContent==='8×'?'24×':$('speed').textContent==='24×'?'1×':'8×'};
+$('speed').onclick=()=>{speedIndex=(speedIndex+1)%speeds.length;$('speed').textContent=speeds[speedIndex].label;$('app').style.setProperty('--city-duration',speeds[speedIndex].duration)};
 $('daynight').onclick=()=>{$('app').classList.toggle('day');$('daynight').textContent=$('app').classList.contains('day')?'☀':'☾'};
 $('about').onclick=()=>$('aboutDialog').showModal();$('closeAbout').onclick=()=>$('aboutDialog').close();document.querySelector('.close').onclick=()=>$('aboutDialog').close();
 $('share').onclick=async()=>{const text='I just took a walk through the AI economy 🏙️ Which lab is moving your world?';try{if(navigator.share)await navigator.share({title:'Token Town',text,url:location.href});else {await navigator.clipboard.writeText(`${text} ${location.href}`);$('toast').classList.add('toast-show');setTimeout(()=>$('toast').classList.remove('toast-show'),2500)}}catch(e){}};
